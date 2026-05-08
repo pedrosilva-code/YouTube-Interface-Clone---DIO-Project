@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid blue;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+.left > #menu + #logo-ytb {
+    margin: 0px 20px;
+}
+.center {
+    display: flex;
+}
+
+.center > .search {
+    border: 1px solid blue;
+    padding: 0px;
+}
+.right {
+    display: flex;
+    align-items: center;
+}
+
