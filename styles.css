@@ -4,11 +4,12 @@
 }
 
 header {
-    background: rgba(255, 255, 255, 1);
-    border: 1px solid blue;
+  background: rgba(255, 255, 255, 1);
+    /*border: 1px solid blue;*/
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     display: flex;
+    margin: 15px;
 }
 
 .left {
@@ -22,12 +23,28 @@ header {
     display: flex;
 }
 
-.center > .search {
-    border: 1px solid blue;
-    padding: 0px;
+.center > .search  {
+    display: flex;
 }
+
+.center > .search > input {
+    width: 350px;
+    height: 38px;
+    border: solid rgba(204, 204, 204, 1) 1px;
+}
+
+.center > .search > button {
+    width: 55px;
+    height: 40px; 
+    border: solid rgba(204, 204, 204, 1) 1px;
+}
+
 .right {
     display: flex;
     align-items: center;
+}
+
+.right > figure {
+    margin: 5px;
 }
 
