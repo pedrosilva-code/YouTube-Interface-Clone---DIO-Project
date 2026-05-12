@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Anybody:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -47,4 +49,29 @@ header {
 .right > figure {
     margin: 5px;
 }
+
+main {
+    margin: 15px;
+    display: flex;
+}
+
+main > .video-details > h1 {
+    font: bolder 20px/1.5 "Roboto", sans-serif;
+}
+
+.video-actions {
+    border: 1px solid black;
+    display: flex;
+    width: 900px;
+    height: 45px;
+    font: 200 "Roboto";
+}
+
+.video-actions > .item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+
 
