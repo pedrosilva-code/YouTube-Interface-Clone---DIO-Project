@@ -51,26 +51,33 @@ header {
 }
 
 main {
-    margin: 15px;
     display: flex;
+    background: rgba(249, 249, 249, 1);
+    height: 1024px;
+    width: auto;
 }
 
 main > .video-details > h1 {
-    font: bolder 20px/1.5 "Roboto", sans-serif;
+    font: bolder 20px/1.0 "Roboto", sans-serif;
 }
 
 .video-actions {
     border: 1px solid black;
     display: flex;
+    align-items: center;
     width: 900px;
     height: 45px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
 .video-actions > .item {
     display: flex;
     align-items: center;
-    padding: 15px;
+    font: normal 14px/1.0 "Roboto", sans-serif;
 }
+
+
 
 
 
