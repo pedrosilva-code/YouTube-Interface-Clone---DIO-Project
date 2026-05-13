@@ -64,7 +64,6 @@ main > .video-details > h1 {
     display: flex;
     width: 900px;
     height: 45px;
-    font: 200 "Roboto";
 }
 
 .video-actions > .item {
