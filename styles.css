@@ -55,20 +55,24 @@ main {
     background: rgba(249, 249, 249, 1);
     height: 1024px;
     width: auto;
+    padding: 16px
 }
 
 main > .video-details > h1 {
-    font: bolder 20px/1.0 "Roboto", sans-serif;
+    font: bolder 20px / 1.0 "Roboto", sans-serif;
+    width: 871px;
+    margin: 10px 0px 10px 0px;
 }
 
+
 .video-actions {
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
+   display: flex;
     width: 900px;
     height: 45px;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
 }
 
 .video-actions > .item {
@@ -76,6 +80,35 @@ main > .video-details > h1 {
     align-items: center;
     font: normal 14px/1.0 "Roboto", sans-serif;
 }
+
+.video-actions > .item > p {
+    padding: 10px;
+    font: normal 14px/1.0 "Roboto", sans-serif;
+}
+
+.video-actions > .image > #text-image {
+    padding: 10px;
+}
+
+.video-actions > .image > #text-image > h2 {
+    font-size: 14px;
+}
+
+.video-actions > .subscribe > button {
+        background-color: rgba(204, 0, 0, 1);
+    width: 159px;
+    height: 40px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.views-date {
+    padding: 10px 0px 10px 0px;
+    font: normal 14px/1.0 "Roboto", sans-serif;
+}
+
 
 
 
