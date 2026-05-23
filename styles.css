@@ -1,77 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Anybody:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* 1. Reset e Ajuste de Imagens */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Garante que padding não quebre a largura */
 }
 
+/* Evita que as imagens do player e dos vídeos estourem o container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 2. Header */
 header {
-  background: rgba(255, 255, 255, 1);
-    /*border: 1px solid blue;*/
+    background: rgba(255, 255, 255, 1);
     align-items: center;
     justify-content: space-between;
     display: flex;
     margin: 15px;
+    gap: 10px;
 }
 
 .left {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
+
 .left > #menu + #logo-ytb {
     margin: 0px 20px;
 }
+
+/* Centraliza a pesquisa e permite que ela encolha se necessário */
 .center {
     display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    max-width: 600px; /* Largura máxima idêntica ao YouTube original */
+    margin: 0 15px;
 }
 
 .center > .search  {
     display: flex;
+    width: 100%;
 }
 
 .center > .search > input {
-    width: 350px;
+    width: 100%; /* Ocupa o espaço disponível do container */
     height: 38px;
     border: solid rgba(204, 204, 204, 1) 1px;
+    padding: 0 10px;
+    border-radius: 2px 0 0 2px;
 }
 
 .center > .search > button {
     width: 55px;
-    height: 40px; 
+    height: 38px; /* Alinhado com o input */
     border: solid rgba(204, 204, 204, 1) 1px;
+    border-left: none;
+    background: #f8f8f8;
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
 }
 
 .right {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .right > figure {
     margin: 5px;
 }
 
+/* 3. Layout Principal (Mobile-First por padrão) */
 main {
     display: flex;
-    height: 1024px;
-    width: auto;
-    padding: 16px
+    flex-direction: column; /* No celular, tudo fica em uma única coluna */
+    padding: 16px;
+    gap: 24px;
 }
 
+.video-details {
+    width: 100%;
+}
+
+/* Removemos a largura fixa de 871px para não quebrar a tela */
 main > .video-details > h1 {
-    font: bolder 20px / 1.0 "Roboto", sans-serif;
-    width: 871px;
-    margin: 10px 0px 10px 0px;
+    font: bolder 20px / 1.4 "Roboto", sans-serif;
+    width: 100%;
+    margin: 12px 0;
 }
 
-
+/* Ações do vídeo flexíveis */
 .video-actions {
-   display: flex;
-    width: 900px;
-    height: 45px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* Permite que os botões quebrem linha se faltar espaço */
     align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .video-actions > .item {
@@ -81,12 +114,12 @@ main > .video-details > h1 {
 }
 
 .video-actions > .item > p {
-    padding: 10px;
+    padding: 0 8px;
     font: normal 14px/1.0 "Roboto", sans-serif;
 }
 
 .video-actions > .image > #text-image {
-    padding: 10px;
+    padding: 0 10px;
 }
 
 .video-actions > .image > #text-image > h2 {
@@ -94,31 +127,60 @@ main > .video-details > h1 {
 }
 
 .video-actions > .subscribe > button {
-        background-color: rgba(204, 0, 0, 1);
-    width: 159px;
-    height: 40px;
+    background-color: rgba(204, 0, 0, 1);
+    width: 120px;
+    height: 36px;
     border: none;
     color: white;
     text-transform: uppercase;
+    font-weight: bold;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 .views-date {
-    padding: 10px 0px 10px 0px;
-    font: normal 14px/1.0 "Roboto", sans-serif;
+    padding: 12px 0px;
+    font: normal 14px/1.4 "Roboto", sans-serif;
 }
 
 .description {
-    font: normal 14px/1.0 "Roboto", sans-serif;
+    font: normal 14px / 1.4 "Roboto", sans-serif;
+    width: 100%; /* Ocupa a largura total do container do vídeo */
+    background: #f2f2f2; /* Estilo padrão de caixas de descrição */
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* Coluna Lateral de Sugestões */
+.column {
+    padding: 0;
+    width: 100%;
 }
 
 .videos {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    gap: 12px;
 }
 
+/* 4. Responsividade para Desktops (Telas maiores que 1024px) */
+@media (min-width: 1024px) {
+    main {
+        flex-direction: row; /* Coloca os sugeridos ao lado do vídeo principal */
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
 
+    .video-details {
+        flex: 1; /* Ocupa o espaço máximo disponível à esquerda */
+        max-width: 860px;
+    }
 
-
-
+    .column {
+        width: 360px; /* Largura fixa ideal para a barra lateral de vídeos */
+        flex-shrink: 0;
+        padding-left: 24px;
+    }
+}
