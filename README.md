@@ -5,7 +5,6 @@ Este projeto foi desenvolvido com o objetivo de replicar a interface principal d
 ## 🚀 Tecnologias Utilizadas
 - HTML5 (Estruturação semântica)
 - CSS3 (Estilização, Flexbox/Grid)
-- JavaScript (Se houver alguma funcionalidade, se não, pode remover esta linha)
 
 ## 🧠 O que eu aprendi com este projeto?
 Sendo um projeto focado no meu aprendizado para vagas de Jovem Aprendiz/Iniciante, este desafio me ajudou a:
