@@ -1,104 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Anybody:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
-    margin: 0;
-    padding: 0;
+    padding: 0px;
+    margin: 0px;
+    gap: 0px;
 }
 
-header {
-  background: rgba(255, 255, 255, 1);
-    /*border: 1px solid blue;*/
-    align-items: center;
-    justify-content: space-between;
+.menu {
     display: flex;
-    margin: 15px;
+    align-items: center;
+    border: 1px solid;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 5px;
 }
 
 .left {
-    display: flex;
-    align-items: center;
+   display: flex;
+   align-items: center;
+    border: 1px solid;
 }
-.left > #menu + #logo-ytb {
-    margin: 0px 20px;
+
+.left > figure > #youtube {
+    padding-left: 10px;
 }
+
 .center {
     display: flex;
 }
 
-.center > .search  {
-    display: flex;
-}
-
-.center > .search > input {
-    width: 350px;
-    height: 38px;
-    border: solid rgba(204, 204, 204, 1) 1px;
-}
-
-.center > .search > button {
-    width: 55px;
-    height: 40px; 
-    border: solid rgba(204, 204, 204, 1) 1px;
-}
-
 .right {
     display: flex;
-    align-items: center;
 }
-
-.right > figure {
-    margin: 5px;
-}
-
-main {
-    display: flex;
-    height: 1024px;
-    width: auto;
-    padding: 16px;
-    font: normal 14px/1.0 "Roboto", sans-serif;
-}
-
-.video-actions {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding-top: 10px;
-}
-
-.item {
-    padding-right: 40px;
-    display: flex;
-    align-items: center;
-}
-
-.item > figure > img {
-    padding-right: 5px;
-}
-
-.subscribe > button {
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(193, 3, 3);
-    padding: 15px;
-    color: white;
-}
-
-.videos {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.views-date {
-    padding-top: 10px;
-}
-
-.description {
-    width: auto;
-    padding-top: 10px;
-}
-
-
-
