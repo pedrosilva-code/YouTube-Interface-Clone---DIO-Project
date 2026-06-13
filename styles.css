@@ -75,6 +75,15 @@ header {
 .right > figure {
     margin: 5px;
 }
+.right > figure > #profile {
+    height: 34px;
+    border-radius: 100px;
+}
+
+.search-btn > figure {
+    display: flex;
+    justify-content: center;
+}
 
 /* 3. Layout Principal (Mobile-First por padrão) */
 main {
@@ -89,10 +98,15 @@ main {
 }
 
 /* Removemos a largura fixa de 871px para não quebrar a tela */
-main > .video-details > h1 {
+main > .box  > .video-details > h1 {
     font: bolder 20px / 1.4 "Roboto", sans-serif;
     width: 100%;
     margin: 12px 0;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Ações do vídeo flexíveis */
@@ -163,6 +177,66 @@ main > .video-details > h1 {
     gap: 12px;
 }
 
+/* 1. O CONTAINER PRINCIPAL */
+.video {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    
+    /* CORREÇÃO AQUI: Força o card a ocupar toda a largura disponível do seu layout */
+    width: 100%; 
+    max-width: 650px; /* Define um limite máximo realista idêntico ao do YouTube */
+    
+    font-family: Roboto, Arial, sans-serif;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* 2. A IMAGEM (THUMBNAIL) */
+.video img {
+    width: 160px;
+    min-width: 160px; /* IMPEDE absolutamente que a imagem encolha ou esmague o texto */
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 3. O BLOCO DE TEXTO */
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    /* CORREÇÃO AQUI: Garante que o texto se espalhe pelo resto do espaço horizontal */
+    flex: 1; 
+    min-width: 0; /* Evita que o Flexbox trave o tamanho mínimo do texto */
+}
+
+/* 4. O TÍTULO (H1) */
+.text h1 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0f0f0f;
+    margin: 0;
+    line-height: 1.3;
+
+    /* Faz o corte perfeito em até 2 linhas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 5. OS METADADOS (CANAL E VIEWS) */
+.text p {
+    font-size: 13px;
+    color: #606060;
+    margin: 0;
+    line-height: 1.4;
+    white-space: normal; /* Garante que quebrem linha normalmente se faltar espaço */
+}
+
 /* 4. Responsividade para Desktops (Telas maiores que 1024px) */
 @media (min-width: 1024px) {
     main {
@@ -179,8 +253,8 @@ main > .video-details > h1 {
     }
 
     .column {
-        width: 360px; /* Largura fixa ideal para a barra lateral de vídeos */
+        width: 520px; /* Largura fixa ideal para a barra lateral de vídeos */
         flex-shrink: 0;
-        padding-left: 24px;
+        padding-left: 130px;
     }
 }
