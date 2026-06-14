@@ -1,0 +1,132 @@
+* {
+    gap: 0;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: rgba(249, 249, 249, 1);
+    display: grid;
+
+    grid-template: 56px auto / 218px 1fr;
+
+    grid-template-areas: 
+    "header header"
+    "aside main";
+}
+
+.item {
+    height: auto;
+    width: auto;
+  
+}
+
+/* 1. CONFIGURAÇÃO DO ESSENCIAL NO HEADER */
+header.menu {
+    grid-area: header; /* Fala para o body que o header manda na linha do topo inteira */
+    height: 56px;      /* Altura padrão do topo do YouTube */
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Empurra a esquerda para o canto, o centro para o meio e a direita para o outro canto */
+    
+    padding: 0 16px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5; /* Linha sutil separando o topo do resto do site */
+}
+
+/* 2. LADO ESQUERDO (Menu Hamburguer e Logo) */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Espaço entre o ícone do menu e a logo do YouTube */
+    width: 218px; /* Bate exatamente com a largura que você deu para o seu ASIDE! */
+    flex-shrink: 0; /* Impede que a logo seja esmagada se a tela diminuir */
+}
+
+.left figure {
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* 3. CENTRO (Barra de Pesquisa) */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;      /* Faz o container do meio usar o espaço central disponível */
+    max-width: 640px;  /* Limita o tamanho máximo da barra de pesquisa igual ao original */
+    padding: 0 24px;
+}
+
+.search {
+    display: flex;
+    width: 100%;
+    height: 40px; /* Altura padrão dos inputs do YouTube */
+}
+
+.search-bar {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    padding: 0 16px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar:focus {
+    border-color: #1c62b9; /* Cor azul clássica quando clica na barra do YouTube */
+}
+
+.search-btn {
+    width: 64px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-left: none; /* Remove a linha entre o input e o botão */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* 4. LADO DIREITO (Ícones e Foto de Perfil) */
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px; /* Espaço entre os ícones e a foto */
+    width: 218px; /* Mantém a simetria com o lado esquerdo */
+    flex-shrink: 0;
+}
+
+.right figure {
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Ajuste da foto de perfil para ficar redondinha */
+#profile {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+aside {
+    background-color: palegreen;
+    grid-area: aside;
+}
+
+main {
+    background-color: palevioletred;
+    grid-area: main;
+}
